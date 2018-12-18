@@ -1,0 +1,26 @@
+
+.aligner {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+body {
+
+  background-image: url("background.jpg")
+}
+
+button {
+  background-color: white;
+  color: black;
+  border: 2px solid ;
+  padding: 15px 32px;
+  cursor:pointer;
+}
