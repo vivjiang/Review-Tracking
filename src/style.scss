@@ -3,23 +3,101 @@ html{
   margin:0;
 }
 
-.page-container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.container {
-  height: 100 vh;
+.app {
+  height: 100%;
   width: 100%;
+}
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.homePageContainer {
+  display:flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.appbar {
+  width: 100%;
+}
+.dashboardContainer {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  justify-content: space-around;
+  margin-right: 200px;
+}
+.cardChartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 55%;
+}
+
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  height: 100%;
+  width: 100%;
+  align-items: flex-start;
+}
+.statsCard {
+  height: 325px;
+  width: 100%;
+}
+.cardContent {
+  height: 100%;
+  width: 100%;
+}
+.pieChartsContainer {
+  height: 70%;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.pieChartContainer {
+  height: 175px;
+  width: 175px;
+  border: 3px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+}
+.positiveModal {
+  height: 450px;
+  width: 700px;
+  position: absolute;
+  background-color: white;
+}
+.chartCard {
+  width: 100%;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+.cardRankingContainer {
+  height: 100%;
+  width: 100%;
 }
 
+.rankingCard {
+  height: 100%;
+  width: 400px;
+}
+.rankingTableContainer {
+  height: 200px;
+  overflow: 'auto';
+}
 body {
   background-image: url("img/background.jpg")
 }

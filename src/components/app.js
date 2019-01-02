@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { GoogleLogin } from 'react-google-login';
+// import { GoogleLogin } from 'react-google-login';
 // import Google from './google';
 import Dashboard from './Dashboard';
 import '../style.scss';
 
-const YOUR_CLIENT_ID = '38722714684-55v0i5qrm0sgual3kt15gcog4chgiubk.apps.googleusercontent.com';
+// const YOUR_CLIENT_ID = '38722714684-55v0i5qrm0sgual3kt15gcog4chgiubk.apps.googleusercontent.com';
 // const YOUR_REDIRECT_URI = 'http://localhost:8080';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = { isAuthenticated: false };
-  }
-
-    logout = () => {
-      this.setState({ isAuthenticated: false });
-    };
+  // constructor() {
+  //   super();
+  //   // this.state = { isAuthenticated: false };
+  // }
+  //
+  // logout = () => {
+  //   this.setState({ isAuthenticated: false });
+  // };
 
     onFailure = (error) => {
       console.log(error);
@@ -49,31 +49,32 @@ class App extends Component {
 
 
     render() {
-      const { isAuthenticated } = this.state;
-      // const { user } = this.state;
-      const content = isAuthenticated
-        ? (
-          <div>
-            <p>Authenticated</p>
-          </div>
-        )
-        : (
-          <div>
-            <GoogleLogin
-              clientId={YOUR_CLIENT_ID}
-              buttonText="Login"
-              onSuccess={this.googleResponse}
-              onFailure={this.onFailure}
-              responseType="code"
-              prompt="consent"
-            />
-          </div>
-        );
+      // const { isAuthenticated } = this.state;
+      // // const { user } = this.state;
+      // const content = isAuthenticated
+      //   ? (
+      //     <div>
+      //       <p>Authenticated</p>
+      //     </div>
+      //   )
+      //   : (
+      //     <div>
+      //       <GoogleLogin
+      //         clientId={YOUR_CLIENT_ID}
+      //         buttonText="Login"
+      //         onSuccess={this.googleResponse}
+      //         onFailure={this.onFailure}
+      //         responseType="code"
+      //         prompt="consent"
+      //       />
+      //     </div>
+      //   );
 
       return (
         <div className="App">
-          {content}
-          <Dashboard />
+          <div className="container">
+            <Dashboard />
+          </div>
         </div>
       );
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -11,7 +11,9 @@ import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SimpleLineChart from './SimpleLineChart';
-import SimpleTable from './SimpleTable';
+// import SimpleTable from './SimpleTable';
+import StatsCard from './StatsCard';
+import RankingCard from './RankingCard';
 
 const drawerWidth = 240;
 
@@ -82,11 +84,11 @@ const styles = theme => ({
     overflow: 'auto',
     flexDirection: 'row',
   },
-  chartContainer: {
-    marginLeft: -22,
-  },
   tableContainer: {
     height: 320,
+  },
+  cardContainer: {
+    height: 100,
   },
   h5: {
     marginBottom: theme.spacing.unit * 2,
@@ -100,29 +102,36 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     console.log('Review chart in component did mount');
-    this.refreshData();
+    // this.refreshData();
   }
 
   async refreshData() {
     console.log('in refresh data');
-    await axios.get('http://localhost:9090/google/refresh')
+    await axios.get('http://localhost:9090/reviews/update')
       .then((res) => {
         console.log('refresh data response: ', res);
       })
       .catch((err) => {
         console.log('err');
       });
+    // await axios.get('http://localhost:9090/google/refresh')
+    //   .then((res) => {
+    //     console.log('refresh data response: ', res);
+    //   })
+    //   .catch((err) => {
+    //     console.log('err');
+    //   });
   }
 
   render() {
     const { classes } = this.props;
     const { open } = this.state;
     return (
-      <div className={classes.root}>
+      <div className="homePageContainer">
         <CssBaseline />
         <AppBar
           position="absolute"
-          className={classNames(classes.appBar, open && classes.appBarShift)}
+          className="appbar"
         >
           <Toolbar disableGutters={!open} className={classes.toolbar}>
             <Typography
@@ -141,21 +150,22 @@ class Dashboard extends React.Component {
             </IconButton>
           </Toolbar>
         </AppBar>
-        <main className={classes.content} styles={{ flexDirection: 'row' }}>
-          <div className={classes.appBarSpacer} />
-          <Typography variant="h4" gutterBottom component="h2">
-            { 'Trend Over Time' }
-          </Typography>
-          <Typography component="div" className={classes.chartContainer}>
-            <SimpleLineChart />
-          </Typography>
-          <Typography variant="h4" gutterBottom component="h2">
-            { 'Reviews Summary'}
-          </Typography>
-          <div className={classes.tableContainer}>
-            <SimpleTable />
+        <div className="dashboardContainer">
+          <div className="cardChartContainer">
+            <Typography component="div" className={classes.cardStatsContainer}>
+              <StatsCard />
+            </Typography>
+            <div className="chartContainer">
+              <Typography variant="h5">
+                { 'Trend Over Time' }
+              </Typography>
+              <SimpleLineChart />
+            </div>
           </div>
-        </main>
+          <Typography component="div" className={classes.cardRankingContainer}>
+            <RankingCard />
+          </Typography>
+        </div>
       </div>
     );
   }

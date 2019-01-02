@@ -8,6 +8,7 @@ import YAxis from 'recharts/lib/cartesian/YAxis';
 import CartesianGrid from 'recharts/lib/cartesian/CartesianGrid';
 import Tooltip from 'recharts/lib/component/Tooltip';
 import Legend from 'recharts/lib/component/Legend';
+import Card from '@material-ui/core/Card';
 
 
 class ReviewChart extends React.Component {
@@ -74,16 +75,18 @@ class ReviewChart extends React.Component {
     const { data } = this.state;
     return (
     // 99% per https://github.com/recharts/recharts/issues/172
-      <ResponsiveContainer width="50%" height={550}>
-        <LineChart data={data}>
-          <XAxis dataKey="date" />
-          <YAxis />
-          <CartesianGrid vertical={false} strokeDasharray="3 3" />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="Negative Reviews as Percentage of Total (Cumulative)" stroke="red" width="10" />
-        </LineChart>
-      </ResponsiveContainer>
+      <Card className="chartCard">
+        <ResponsiveContainer width="100%" height={400}>
+          <LineChart data={data}>
+            <XAxis dataKey="date" />
+            <YAxis padding={{ left: 0, right: 0 }} />
+            <CartesianGrid vertical={false} strokeDasharray="3 3" />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="Negative Reviews as Percentage of Total (Cumulative)" stroke="red" width="10" />
+          </LineChart>
+        </ResponsiveContainer>
+      </Card>
     );
   }
 }
