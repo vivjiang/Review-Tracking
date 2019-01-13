@@ -19,7 +19,7 @@
         "arrow-body-style": 0,
         "one-var": ["error", { "uninitialized": "always", "initialized": "never" }],
         "one-var-declaration-per-line": ["error", "initializations"],
-        "linebreak-style": ["error","unix"],
+        "linebreak-style": ["error","windows"],
         "max-len": ["error", 200],
         "no-extra-parens": 0,
         "no-restricted-syntax": [
@@ -33,6 +33,7 @@
         "react/prop-types": 0,
         "react/jsx-first-prop-new-line": 0,
         "react/jsx-filename-extension": 0,
+        "react/jsx-one-expression-per-line": 0,
         "jsx-a11y/click-events-have-key-events": 0,
         "jsx-a11y/no-noninteractive-element-interactions": 0,
     },

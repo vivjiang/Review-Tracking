@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import SimpleLineChart from './SimpleLineChart';
+import TrendChartCard from './TrendChartCard';
 // import SimpleTable from './SimpleTable';
 import StatsCard from './StatsCard';
 import RankingCard from './RankingCard';
@@ -156,10 +156,7 @@ class Dashboard extends React.Component {
               <StatsCard />
             </Typography>
             <div className="chartContainer">
-              <Typography variant="h5">
-                { 'Trend Over Time' }
-              </Typography>
-              <SimpleLineChart />
+              <TrendChartCard />
             </div>
           </div>
           <Typography component="div" className={classes.cardRankingContainer}>

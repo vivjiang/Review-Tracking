@@ -39,15 +39,99 @@ html{
   height: 100%;
   width: 55%;
 }
-
+.settingsContainer {
+  height: 650px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.settingsTabContainer {
+  width: 500px;
+}
+.chartSettings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .chartContainer {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
   height: 100%;
-  width: 100%;
+  width: 50%;
   align-items: flex-start;
 }
+.chartDatePicker {
+  width: 100%;
+  height: 100%;
+}
+.datePickerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.startDatePickerContainer {
+  display: flex;
+  flex-direction: column;
+}
+.endDatePickerContainer {
+  display: flex;
+  flex-direction: column;
+}
+.locationSettingsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.filterFormContainer {
+  margin-top: 30px;
+  margin-left: 40px;
+}
+.filterOptionsContainer {
+  display: flex;
+  flex-direction: row;
+}
+.locationSelectionContainer {
+  margin-left: 40px;
+}
+.expandContainers {
+  margin-top: 30px;
+}
+.expandPanel {
+  width: 100%;
+}
+.locationOptions {
+  height: 200px;
+}
+.locationPanel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cohortPanel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nonePanel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80px;
+}
+.noneOption {
+  margin-top: 30px;
+}
+.applyCancelContainer {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .statsCard {
   height: 325px;
   width: 100%;
@@ -92,11 +176,23 @@ html{
 
 .rankingCard {
   height: 100%;
-  width: 400px;
+  width: 500px;
 }
 .rankingTableContainer {
-  height: 200px;
-  overflow: 'auto';
+  margin-top: 50px;
+  height: 700px;
+}
+.rankingTableWrapper {
+  overflow-x: 'auto';
+}
+.rankingTable {
+  min-width: 200px;
+}
+.locationColumn {
+  width: 100px;
+}
+.paging {
+    flex-shrink: 0,
 }
 body {
   background-image: url("img/background.jpg")

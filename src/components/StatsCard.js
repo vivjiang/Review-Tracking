@@ -32,7 +32,14 @@ class StatsCard extends React.Component {
     const yesterday = new Date();
     yesterday.setDate(today.getDate() - 1);
     console.log('today', today);
-    const dateString = `${yesterday.getMonth() + 1}-${yesterday.getDate()}-${yesterday.getFullYear()}`;
+    let month = `${yesterday.getMonth() + 1}`;
+    let day = `${yesterday.getDate()}`;
+    if (month.length < 2) {
+      month = `0${month}`;
+      console.log(month);
+    }
+    if (day.length < 2) day = `0${day}`;
+    const dateString = `${yesterday.getFullYear()}-${month}-${day}`;
 
     this.state = {
       day: dateString, stats: {}, reviews: {}, positiveOpen: false, negativeOpen: false, neutralOpen: false,
@@ -91,7 +98,7 @@ class StatsCard extends React.Component {
       <Card className="statsCard">
         <CardContent className="cardContent">
           <Typography gutterBottom variant="h5" component="h2">
-            Stats as of
+            Stats for
             {' '}
             {day}
           </Typography>
